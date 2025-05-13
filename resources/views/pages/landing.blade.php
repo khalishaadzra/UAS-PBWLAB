@@ -78,7 +78,7 @@
                 <a href="#" class="text-white hover:text-accent">Contact</a>
             </div>
             <button class="bg-secondary hover:bg-opacity-90 text-white px-6 py-4 rounded-md">
-                 <a href="#login" class="text-white hover:text-accent">Login</a>
+                 <a href="auth" class="text-white hover:text-accent">Login</a>
             </button>
         </div>
     </nav>

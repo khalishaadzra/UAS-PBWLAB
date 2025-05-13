@@ -15,7 +15,7 @@
 
     body {
       display: flex;
-      background-color: #f6f5f7;
+      background: linear-gradient(to bottom, #2D2B40, #1E1C2F);
       justify-content: center;
       align-items: center;
       flex-direction: column;
@@ -61,7 +61,7 @@
     }
 
     a:hover {
-        color: #4bb6b7;
+        color: #2D2B40;
     }
 
     .content {
@@ -93,8 +93,8 @@
     button {
         position: relative;
         border-radius: 20px;
-        border: 1px solid #4bb6b7;
-        background-color: #4bb6b7;
+        border: 1px solid #686297;
+        background-color: #686297;
         color: #fff;
         font-size: 15px;
         font-weight: 700;
@@ -319,7 +319,7 @@
     }
 
     .social-container a:hover {
-        border: 1px solid #4bb6b7;
+        border: 1px solid #2D2B40;
     }
   </style>
 </head>
@@ -333,7 +333,9 @@
         <input type="text" id="regFullname" name="regFullname" placeholder="Full Name" required />
         <input type="email" id="regEmail" name="regEmail" placeholder="Email" required />
         <input type="password" id="regPassword" name="regPassword" placeholder="Password" required />
-        <button type="submit" id="btn-regis">Register</button>
+        <button type="submit" id="btn-regis"> Register
+        <a href="loginForm"></a>
+        </button>
         <span class="message"></span>
         <div class="social-container">
           <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
@@ -345,21 +347,22 @@
 
     <!-- Login Form -->
     <div class="form-container login-container">
-      <form id="loginForm">
+      <form action="beranda" method="GET">
         <h1>Login here.</h1>
         <input type="email" id="email" name="email" placeholder="Email" required />
         <input type="password" id="password" name="password" placeholder="Password" required />
+        
         <div class="content">
           <div class="checkbox">
             <input type="checkbox" name="checkbox" id="checkbox" />
-            <label>Remember me</label>
-          </div>
-          <div class="pass-link">
-            <a href="#">Forgot password?</a>
+            <label for="checkbox">Remember me</label>
           </div>
         </div>
+
         <button type="submit" id="button-login">Login</button>
+
         <span class="message"></span>
+        
         <div class="social-container">
           <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
           <a href="#" class="social"><i class="lni lni-google"></i></a>
@@ -367,6 +370,7 @@
         </div>
       </form>
     </div>
+
 
     <!-- Overlay Panel -->
     <div class="overlay-container">
