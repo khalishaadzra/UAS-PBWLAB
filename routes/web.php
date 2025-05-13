@@ -9,3 +9,7 @@ Route::get('/desc', function () {
 Route::get('/beranda', function () {
     return view('beranda');
 });
+
+Route::get('/', function () {
+    return view('landing');
+});
