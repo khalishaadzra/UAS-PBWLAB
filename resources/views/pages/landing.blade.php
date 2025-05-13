@@ -1,29 +1,116 @@
-<!-- resources/views/pages/landing.blade.php -->
-@extends('layouts.layout')
-
-@section('content')
-<section class="pt-32 pb-20 px-4 mt-20">
-    <div class="container mx-auto text-center">
-        <div class="justify-center flex items-center mb-10">
-            <img src="{{ asset('hero.svg') }}" alt="logo">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchverse - Your Universe of Movies and Shows</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D2B40',
+                        secondary: '#1E1C2F',
+                        accent: '#DD9BB5',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #2D2B40, #1E1C2F);
+            font-family: 'Inter', sans-serif;
+        }
+        .movie-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        .poster-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 50;
+            justify-content: center;
+            align-items: center;
+        }
+        .poster-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-opacity-80 backdrop-blur-md bg-secondary z-40 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white flex items-center">
+                <svg class="h-8 w-auto " viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">   
+                </svg>
+                <div>
+                <img src="Watchverse.svg" alt="logo">
+            </div>
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <div class="relative group">
+                    <button class="text-white hover:text-accent flex items-center">
+                        About
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-white hover:text-accent flex items-center">
+                        Offer
+                    </button>
+                </div>
+                <div class="relative group">
+                    <button class="text-white hover:text-accent flex items-center">
+                        Features
+                    </button>
+                </div>
+                <a href="#" class="text-white hover:text-accent">Contact</a>
+            </div>
+            <button class="bg-secondary hover:bg-opacity-90 text-white px-6 py-4 rounded-md">
+                 <a href="#login" class="text-white hover:text-accent">Login</a>
+            </button>
         </div>
-        <p class="text-xl mb-12 opacity-80">Temukan, simpan, dan lacak film dan serial favoritmu.</p>
+    </nav>
 
-        <div class="flex flex-col md:flex-row justify-center items-center gap-10 mt-20 relative">
-            <div class="movie-card cursor-pointer rounded-lg overflow-hidden w-100 shadow-lg" onclick="openPosterModal('poster1')">
-                <img src="{{ asset('star-wars.png') }}" alt="Star Wars: The Force Awakens" class="w-full h-auto">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 mt-20">
+        <div class="container mx-auto text-center ">
+            <div class="justify-center flex items-center mb-10">
+                <img src="hero.svg" alt="logo">
             </div>
-            <div class="movie-card cursor-pointer rounded-lg overflow-hidden w-100 shadow-lg z-10 transform md:scale-110" onclick="openPosterModal('poster2')">
-                <img src="{{ asset('avengers.png') }}" alt="Avengers: Endgame" class="w-full h-auto">
-            </div>
-            <div class="movie-card cursor-pointer rounded-lg overflow-hidden w-100 shadow-lg" onclick="openPosterModal('poster3')">
-                <img src="{{ asset('thewitch.png') }}" alt="The Witch" class="w-full h-auto">
+            <p class="text-xl mb-12 text-white opacity-80">Temukan, simpan, dan lacak film dan serial favoritmu.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-10 mt-20 relative">
+                <!-- Movie Card 1 - Star Wars -->
+                <div class="movie-card cursor-pointer rounded-lg overflow-hidden w-100 shadow-lg mt-100" onclick="openPosterModal('poster1')">
+                    <img src="star-wars.png" alt="Star Wars: The Force Awakens" class="w-full h-auto">
+                </div>
+                
+                <!-- Movie Card 2 - Avengers -->
+                <div class="movie-card cursor-pointer rounded-lg overflow-hidden w-100 shadow-lg z-10 transform md:scale-110" onclick="openPosterModal('poster2')">
+                    <img src="avengers.png" alt="Avengers: Endgame" class="w-full h-auto">
+                </div>
+                
+                <!-- Movie Card 3 - The Witch -->
+                <div class="movie-card cursor-pointer rounded-lg overflow-hidden w-100 shadow-lg mt-100" onclick="openPosterModal('poster3')">
+                    <img src="thewitch.png" alt="The Witch" class="w-full h-auto">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Our Offer Section -->
+    <!-- Our Offer Section -->
     <section class="py-16 px-4 mt-10">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Offer</h2>
@@ -93,6 +180,36 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer / Category -->
+        <footer class="bg-secondary text-white py-20 px-6">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <img src="watchverse.svg" alt="wathcverse Logo" class="h-6 mx-auto md:mx-0">
+                    <p class="text-sm mt-2">Your watchlist, organized and personalized!</p>
+                    <div class="flex justify-center md:justify-start space-x-8 mt-6 text-xl">
+                        <a href="#" class="hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-secondary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-secondary"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Support</h3>
+                    <p class="text-sm">Darussalam, Kec. Syiah Kuala<br>Kota Banda Aceh, Aceh 23111</p>
+                    <p class="text-sm mt-2">watchverse@gmail.com<br>+62 819 3748 1281</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Features</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>Explore</li>
+                        <li>Add</li>
+                        <li>Track & Review</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-xs mt-10">© 2025 Watchverse. All rights reserved.</p>
+        </footer>
+
     <!-- Poster Modal Containers -->
     <div id="poster1Modal" class="poster-modal">
         <div class="poster-content relative">
@@ -158,5 +275,5 @@
         });
     });
 </script>
-
-@endsection
+</body>
+</html>
