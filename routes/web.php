@@ -13,3 +13,8 @@ Route::get('/beranda', function () {
 Route::get('/auth', function () {
     return view('pages.auth');
 });
+
+Route::get('/watchlist', function () {
+    return view('pages.watchlist');
+});
+
