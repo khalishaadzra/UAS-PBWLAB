@@ -2,55 +2,67 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="hero h-screen relative overflow-hidden z-10">
-        <div class="carousel relative w-full h-screen z-1">
-            <div class="carousel-slide active absolute top-0 left-0 w-full h-full">
-                <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-full object-cover absolute inset-0 -z-10">
-                    <source src="{{ asset('Avatar_ The Way of Water _ Official Trailer.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <img class="fallback-image w-full h-full object-cover absolute inset-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Thunderbolts Fallback">
-                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
-                    <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Thunderbolts</h1>
-                    <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">A thrilling Marvel adventure where a team of antiheroes must unite to save the world from a deadly threat. Packed with action and humor!</p>
-                    <button class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-md text-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/40" onclick="scrollToTrending()">Start Now</button>
-                </div>
-            </div>
-            <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
-                <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-full object-cover absolute inset-0 -z-10">
-                    <source src="{{ asset('Avatar_ The Way of Water _ Official Trailer.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <img class="fallback-image w-full h-full object-cover absolute inset-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Avatar Fallback">
-                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
-                    <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Avatar: The Way of Water</h1>
-                    <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">Dive back into Pandora with breathtaking visuals and an epic tale of family, survival, and the power of nature.</p>
-                    <button class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-md text-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/40" onclick="scrollToTrending()">Start Now</button>
-                </div>
-            </div>
-            <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
-                <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-full object-cover absolute inset-0 -z-10">
-                    <source src="{{ asset('Deadpool & Wolverine _ Official Trailer _ In Theaters July 26.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <img class="fallback-image w-full h-full object-cover absolute inset-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Deadpool & Wolverine Fallback">
-                <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
-                    <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Deadpool & Wolverine</h1>
-                    <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">The Merc with a Mouth teams up with Wolverine in a hilarious, action-packed romp through the multiverse!</p>
-                    <button class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-md text-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/40" onclick="scrollToTrending()">Start Now</button>
-                </div>
-            </div>
-            <div class="carousel-nav absolute top-1/2 w-full flex justify-between transform -translate-y-1/2 z-20">
-                <button onclick="prevSlide()" class="bg-black bg-opacity-50 hover:bg-accent ml-4 text-white text-3xl px-4 py-2 rounded-md">❮</button>
-                <button onclick="nextSlide()" class="bg-black bg-opacity-50 hover:bg-accent mr-4 text-white text-3xl px-4 py-2 rounded-md">❯</button>
-            </div>
-            <div class="carousel-dots absolute bottom-5 w-full text-center z-20">
-                <span class="carousel-dot inline-block w-3 h-3 bg-gray-500 rounded-full mx-1 cursor-pointer active:bg-accent" onclick="goToSlide(0)"></span>
-                <span class="carousel-dot inline-block w-3 h-3 bg-gray-500 rounded-full mx-1 cursor-pointer" onclick="goToSlide(1)"></span>
-                <span class="carousel-dot inline-block w-3 h-3 bg-gray-500 rounded-full mx-1 cursor-pointer" onclick="goToSlide(2)"></span>
+<section class="hero h-screen relative overflow-hidden z-10">
+    <div class="carousel relative w-full h-screen z-1">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active absolute top-0 left-0 w-full h-full">
+            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10">
+                <source src="{{ asset('tunder.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Thunderbolts Fallback">
+            <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
+                <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Thunderbolts</h1>
+                <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">A thrilling Marvel adventure where a team of antiheroes must unite to save the world from a deadly threat. Packed with action and humor!</p>
+                <button class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-md text-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/40" onclick="scrollToTrending()">Start Now</button>
             </div>
         </div>
-    </section>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
+            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10">
+                <source src="{{ asset('Avatar_ The Way of Water _ Official Trailer.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Avatar Fallback">
+            <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
+                <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Avatar: The Way of Water</h1>
+                <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">Dive back into Pandora with breathtaking visuals and an epic tale of family, survival, and the power of nature.</p>
+                <button class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-md text-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/40" onclick="scrollToTrending()">Start Now</button>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
+            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10">
+                <source src="{{ asset('Deadpool & Wolverine _ Official Trailer _ In Theaters July 26.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Deadpool & Wolverine Fallback">
+            <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
+                <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Deadpool & Wolverine</h1>
+                <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">The Merc with a Mouth teams up with Wolverine in a hilarious, action-packed romp through the multiverse!</p>
+                <button class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-md text-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/40" onclick="scrollToTrending()">Start Now</button>
+            </div>
+        </div>
+
+        <!-- Navigasi Carousel -->
+        <div class="carousel-nav absolute top-1/2 w-full flex justify-between transform -translate-y-1/2 z-20">
+            <button onclick="prevSlide()" class="bg-opacity-50 hover:bg-accent ml-4 text-white text-3xl px-4 py-2 rounded-md">❮</button>
+            <button onclick="nextSlide()" class="bg-opacity-50 hover:bg-accent mr-4 text-white text-3xl px-4 py-2 rounded-md">❯</button>
+        </div>
+
+        <!-- Dot Carousel -->
+        <div class="carousel-dots absolute bottom-5 w-full text-center z-20">
+            <span class="carousel-dot inline-block w-3 h-3 bg-gray-500 rounded-full mx-1 cursor-pointer active:bg-accent" onclick="goToSlide(0)"></span>
+            <span class="carousel-dot inline-block w-3 h-3 bg-gray-500 rounded-full mx-1 cursor-pointer" onclick="goToSlide(1)"></span>
+            <span class="carousel-dot inline-block w-3 h-3 bg-gray-500 rounded-full mx-1 cursor-pointer" onclick="goToSlide(2)"></span>
+        </div>
+    </div>
+</section>
+
+
+
 
     <section class="navbarStart pt-24" id="navbarStart">
         <!-- Trending Movies Section -->
@@ -90,7 +102,7 @@
     </section>
 
     <!-- Modal for Details -->
-    <div id="movieModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-50 hidden justify-center items-center">
+    <div id="movieModal" class="fixed top-0 left-0 w-full h-full bg-opacity-90 z-50 hidden justify-center items-center">
         <div class="bg-primary p-8 rounded-xl max-w-lg text-center shadow-2xl animate-[slideIn_0.5s_ease-out]">
             <h3 id="modalTitle" class="text-3xl mb-4"></h3>
             <p id="modalOverview" class="mb-6 text-gray-300"></p>
@@ -109,13 +121,12 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) {
-                        // Above the main content - transparent
-                        navbar.classList.add('bg-opacity-30');
-                        navbar.classList.remove('bg-opacity-80');
-                    } else {
-                        // Scrolled to content - more solid
-                        navbar.classList.remove('bg-opacity-30');
-                        navbar.classList.add('bg-opacity-80');
+                    navbar.classList.add('bg-transparent');
+                    navbar.classList.remove('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
+                } else {
+                    // Di posisi paling atas: transparan total tanpa blur
+                    navbar.classList.remove('bg-transparent');
+                    navbar.classList.add('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
                     }
                 });
             }, { threshold: 0.2 });
@@ -125,28 +136,28 @@
         // Data dummy untuk sementara
         const dummyMovies = {
             trending: [
-                { id: 1, title: "Thunderbolts", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", watching: "695 watching", overview: "A team of antiheroes...", release_date: "2025-07-01" },
-                { id: 2, title: "Nonnas", poster: "{{ asset('assets/images/large.jpg') }}", watching: "505 watching", overview: "A family drama...", release_date: "2025-06-15" },
-                { id: 3, title: "The Accountant", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", watching: "451 watching", overview: "A thriller about a genius...", release_date: "2025-05-20" },
-                { id: 4, title: "Drop", poster: "{{ asset('assets/images/large.jpg') }}", watching: "354 watching", overview: "An action-packed drop...", release_date: "2025-08-10" }
+                { id: 1, title: "Thunderbolts", poster: "{{ asset('Thunderbolt.jpeg') }}", watching: "695 watching", overview: "A team of antiheroes...", release_date: "2025-07-01" },
+                { id: 2, title: "Nonnas", poster: "{{ asset('large.jpg') }}", watching: "505 watching", overview: "A family drama...", release_date: "2025-06-15" },
+                { id: 3, title: "The Accountant", poster: "{{ asset('Thunderbolt.jpeg') }}", watching: "451 watching", overview: "A thriller about a genius...", release_date: "2025-05-20" },
+                { id: 4, title: "Drop", poster: "{{ asset('large.jpg') }}", watching: "354 watching", overview: "An action-packed drop...", release_date: "2025-08-10" }
             ],
             anticipated: [
-                { id: 5, title: "Avatar", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "34.8k eager", overview: "A return to Pandora...", release_date: "2025-12-15" },
-                { id: 6, title: "Mission Impossible", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "29.4k eager", overview: "Ethan Hunt's new mission...", release_date: "2025-11-01" },
-                { id: 7, title: "Avengers", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "18k eager", overview: "The next Avengers saga...", release_date: "2025-10-20" }
+                { id: 5, title: "Avatar", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "34.8k eager", overview: "A return to Pandora...", release_date: "2025-12-15" },
+                { id: 6, title: "Mission Impossible", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "29.4k eager", overview: "Ethan Hunt's new mission...", release_date: "2025-11-01" },
+                { id: 7, title: "Avengers", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "18k eager", overview: "The next Avengers saga...", release_date: "2025-10-20" }
             ],
             popular: [
-                { id: 8, title: "Deadpool", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "31.5k eager", overview: "A hilarious antihero...", release_date: "2025-05-10" },
-                { id: 9, title: "Interstellar", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "22.8k eager", overview: "A space exploration epic...", release_date: "2025-06-01" },
-                { id: 10, title: "Avatar", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "25.3k eager", overview: "Back to Pandora...", release_date: "2025-12-15" }
+                { id: 8, title: "Deadpool", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "31.5k eager", overview: "A hilarious antihero...", release_date: "2025-05-10" },
+                { id: 9, title: "Interstellar", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "22.8k eager", overview: "A space exploration epic...", release_date: "2025-06-01" },
+                { id: 10, title: "Avatar", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "25.3k eager", overview: "Back to Pandora...", release_date: "2025-12-15" }
             ],
             topRated: [
-                { id: 11, title: "The Godfather", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", rating: "9.2/10", overview: "A mafia masterpiece...", release_date: "2025-01-01" },
-                { id: 12, title: "Inception", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", rating: "8.8/10", overview: "A mind-bending heist...", release_date: "2025-02-01" }
+                { id: 11, title: "The Godfather", poster: "{{ asset('Thunderbolt.jpeg') }}", rating: "9.2/10", overview: "A mafia masterpiece...", release_date: "2025-01-01" },
+                { id: 12, title: "Inception", poster: "{{ asset('Thunderbolt.jpeg') }}", rating: "8.8/10", overview: "A mind-bending heist...", release_date: "2025-02-01" }
             ],
             recentlyAdded: [
-                { id: 13, title: "Dune: Part Two", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", added: "New", overview: "The continuation of Dune...", release_date: "2025-03-01" },
-                { id: 14, title: "Oppenheimer", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", added: "New", overview: "A historical drama...", release_date: "2025-04-01" }
+                { id: 13, title: "Dune: Part Two", poster: "{{ asset('Thunderbolt.jpeg') }}", added: "New", overview: "The continuation of Dune...", release_date: "2025-03-01" },
+                { id: 14, title: "Oppenheimer", poster: "{{ asset('Thunderbolt.jpeg') }}", added: "New", overview: "A historical drama...", release_date: "2025-04-01" }
             ]
         };
 
