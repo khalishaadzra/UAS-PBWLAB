@@ -61,9 +61,6 @@
     </div>
 </section>
 
-
-
-
     <section class="navbarStart pt-24" id="navbarStart">
         <!-- Trending Movies Section -->
         <section class="movie-section trending px-6 py-10 md:px-12 relative z-20 opacity-0 translate-y-12 transition-all duration-1000" id="trendingSection">
@@ -92,14 +89,6 @@
             <div class="movie-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 pb-8" id="topRatedMovies"></div>
             <a href="#" class="text-accent hover:text-white text-xl transition-colors duration-300 inline-block mt-4">View All</a>
         </section>
-
-        <!-- Recently Added Movies Section -->
-        <section class="movie-section recently-added px-6 py-10 md:px-12 relative z-20 opacity-0 translate-y-12 transition-all duration-1000">
-            <h2 class="text-4xl mb-8 text-accent uppercase border-b-2 border-accent inline-block pb-1">Recently Added</h2>
-            <div class="movie-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 pb-8" id="recentlyAddedMovies"></div>
-            <a href="#" class="text-accent hover:text-white text-xl transition-colors duration-300 inline-block mt-4">View All</a>
-        </section>
-    </section>
 
     <!-- Modal for Details -->
     <div id="movieModal" class="fixed top-0 left-0 w-full h-full bg-opacity-90 z-50 hidden justify-center items-center">
@@ -239,7 +228,6 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
                             <div class="p-4 w-full">
                                 <div class="flex justify-between items-center">
-                                    <button class="bg-accent hover:bg-accent/90 text-white px-2 py-1 rounded text-sm" onclick="addToWatchlist('${movie.id}')">+ Watchlist</button>
                                     <button class="bg-secondary/70 hover:bg-secondary text-white px-2 py-1 rounded text-sm" onclick="showMovieDetails(${index}, '${containerId}')">Details</button>
                                 </div>
                             </div>
