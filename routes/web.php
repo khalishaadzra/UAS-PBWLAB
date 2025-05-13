@@ -18,3 +18,10 @@ Route::get('/watchlist', function () {
     return view('pages.watchlist');
 });
 
+Route::get('/desc', function () {
+    return view('pages.desc');
+});
+
+Route::get('/movie', function () {
+    return view('pages.movie');
+});

@@ -118,7 +118,7 @@
                     navbar.classList.add('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
                     }
                 });
-            }, { threshold: 0.2 });
+            }, { threshold: 0.3 });
             observer.observe(mainSection);
         }
 
