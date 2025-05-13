@@ -125,28 +125,28 @@
         // Data dummy untuk sementara
         const dummyMovies = {
             trending: [
-                { id: 1, title: "Thunderbolts", poster: "{{ asset('Thunderbolt.jpeg') }}", watching: "695 watching", overview: "A team of antiheroes...", release_date: "2025-07-01" },
-                { id: 2, title: "Nonnas", poster: "{{ asset('large.jpg') }}", watching: "505 watching", overview: "A family drama...", release_date: "2025-06-15" },
-                { id: 3, title: "The Accountant", poster: "{{ asset('Thunderbolt.jpeg') }}", watching: "451 watching", overview: "A thriller about a genius...", release_date: "2025-05-20" },
-                { id: 4, title: "Drop", poster: "{{ asset('large.jpg') }}", watching: "354 watching", overview: "An action-packed drop...", release_date: "2025-08-10" }
+                { id: 1, title: "Thunderbolts", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", watching: "695 watching", overview: "A team of antiheroes...", release_date: "2025-07-01" },
+                { id: 2, title: "Nonnas", poster: "{{ asset('assets/images/large.jpg') }}", watching: "505 watching", overview: "A family drama...", release_date: "2025-06-15" },
+                { id: 3, title: "The Accountant", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", watching: "451 watching", overview: "A thriller about a genius...", release_date: "2025-05-20" },
+                { id: 4, title: "Drop", poster: "{{ asset('assets/images/large.jpg') }}", watching: "354 watching", overview: "An action-packed drop...", release_date: "2025-08-10" }
             ],
             anticipated: [
-                { id: 5, title: "Avatar", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "34.8k eager", overview: "A return to Pandora...", release_date: "2025-12-15" },
-                { id: 6, title: "Mission Impossible", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "29.4k eager", overview: "Ethan Hunt's new mission...", release_date: "2025-11-01" },
-                { id: 7, title: "Avengers", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "18k eager", overview: "The next Avengers saga...", release_date: "2025-10-20" }
+                { id: 5, title: "Avatar", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "34.8k eager", overview: "A return to Pandora...", release_date: "2025-12-15" },
+                { id: 6, title: "Mission Impossible", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "29.4k eager", overview: "Ethan Hunt's new mission...", release_date: "2025-11-01" },
+                { id: 7, title: "Avengers", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "18k eager", overview: "The next Avengers saga...", release_date: "2025-10-20" }
             ],
             popular: [
-                { id: 8, title: "Deadpool", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "31.5k eager", overview: "A hilarious antihero...", release_date: "2025-05-10" },
-                { id: 9, title: "Interstellar", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "22.8k eager", overview: "A space exploration epic...", release_date: "2025-06-01" },
-                { id: 10, title: "Avatar", poster: "{{ asset('Thunderbolt.jpeg') }}", eager: "25.3k eager", overview: "Back to Pandora...", release_date: "2025-12-15" }
+                { id: 8, title: "Deadpool", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "31.5k eager", overview: "A hilarious antihero...", release_date: "2025-05-10" },
+                { id: 9, title: "Interstellar", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "22.8k eager", overview: "A space exploration epic...", release_date: "2025-06-01" },
+                { id: 10, title: "Avatar", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", eager: "25.3k eager", overview: "Back to Pandora...", release_date: "2025-12-15" }
             ],
             topRated: [
-                { id: 11, title: "The Godfather", poster: "{{ asset('Thunderbolt.jpeg') }}", rating: "9.2/10", overview: "A mafia masterpiece...", release_date: "2025-01-01" },
-                { id: 12, title: "Inception", poster: "{{ asset('Thunderbolt.jpeg') }}", rating: "8.8/10", overview: "A mind-bending heist...", release_date: "2025-02-01" }
+                { id: 11, title: "The Godfather", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", rating: "9.2/10", overview: "A mafia masterpiece...", release_date: "2025-01-01" },
+                { id: 12, title: "Inception", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", rating: "8.8/10", overview: "A mind-bending heist...", release_date: "2025-02-01" }
             ],
             recentlyAdded: [
-                { id: 13, title: "Dune: Part Two", poster: "{{ asset('Thunderbolt.jpeg') }}", added: "New", overview: "The continuation of Dune...", release_date: "2025-03-01" },
-                { id: 14, title: "Oppenheimer", poster: "{{ asset('Thunderbolt.jpeg') }}", added: "New", overview: "A historical drama...", release_date: "2025-04-01" }
+                { id: 13, title: "Dune: Part Two", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", added: "New", overview: "The continuation of Dune...", release_date: "2025-03-01" },
+                { id: 14, title: "Oppenheimer", poster: "{{ asset('assets/images/Thunderbolt.jpeg') }}", added: "New", overview: "A historical drama...", release_date: "2025-04-01" }
             ]
         };
 
@@ -250,7 +250,7 @@
 
         // Fungsi untuk menambahkan ke watchlist (simulasi)
         function addToWatchlist(movieId) {
-            alert(Added movie ID ${movieId} to your watchlist!);
+            alert(`Added movie ID ${movieId} to your watchlist!`);
         }
 
         // Fungsi untuk menampilkan detail film di modal
@@ -260,8 +260,8 @@
             const movie = movies[index];
             document.getElementById('modalTitle').textContent = movie.title;
             document.getElementById('modalOverview').textContent = movie.overview || 'No overview available.';
-            document.getElementById('modalReleaseDate').textContent = Release Date: ${movie.release_date || 'N/A'};
-            document.getElementById('modalGenres').textContent = Genres: ${['Action', 'Adventure', 'Drama', 'Sci-Fi'][Math.floor(Math.random() * 4)] || 'Unknown'};
+            document.getElementById('modalReleaseDate').textContent = `Release Date: ${movie.release_date || 'N/A'}`;
+            document.getElementById('modalGenres').textContent = `Genres: ${['Action', 'Adventure', 'Drama', 'Sci-Fi'][Math.floor(Math.random() * 4)] || 'Unknown'}`;
             document.getElementById('movieModal').style.display = 'flex';
         }
 
@@ -272,7 +272,7 @@
 
         // Fungsi untuk navigasi ke halaman deskripsi
         function navigateToDesc(movieId) {
-            window.location.href = movie-desc.html?id=${movieId};
+            window.location.href = `movie-desc.html?id=${movieId}`;
         }
 
         // Scroll reveal untuk movie sections
