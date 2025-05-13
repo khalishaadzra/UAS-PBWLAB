@@ -11,12 +11,12 @@
             <button class="text-white hover:text-accent">Home</button>
             <button class="text-white hover:text-accent">Shows</button>
             <button class="text-white hover:text-accent">Movies</button>
-            <a href="#" class="text-white hover:text-accent">Whistlist</a>
+            <a href="#" class="text-white hover:text-accent">Watchlist</a>
 
             <div class="relative">
-    <button id="profileButton" class="text-[#7F8487] text-2xl hover:text-[#2A933C] transition duration-200 focus:outline-none">
-        <i class="fas fa-user-circle"></i>
-    </button>
+            <button id="profileButton" class="text-[#7F8487] text-2xl hover:text-[#2A933C] transition duration-200 focus:outline-none">
+                <i class="fas fa-user-circle"></i>
+            </button>
 
     <!-- Popup profil -->
     <div id="logoutPopup" class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg p-4 hidden z-50 border border-gray-100">
