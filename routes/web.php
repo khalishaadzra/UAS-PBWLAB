@@ -10,3 +10,7 @@ Route::get('/home', function () {
     return view('pages.beranda');
 });
 
+
+Route::get('/home', function () {
+    return view('pages.beranda');
+});
