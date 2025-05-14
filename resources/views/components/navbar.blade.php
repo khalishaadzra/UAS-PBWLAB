@@ -7,9 +7,9 @@
 
         <!-- Menu + Profile -->
         <div class="hidden md:flex items-center space-x-6 gap-8">
-            <button class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Home</button>
-            <button class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Shows</button>
-            <button class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Movies</button>
+            <a href="home" class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Home</a>
+            <a href="series" class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Series</a>
+            <a href="movie" class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Movies</a>
             <a href="watchlist" class="text-[#D1D7E0] text-base font-medium hover:text-[#802BB1] transition-all duration-300 hover:scale-105">Watchlist</a>
 
             <!-- Profile Button -->
