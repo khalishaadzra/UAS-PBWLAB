@@ -3,8 +3,8 @@
 @section('content')
     <style>
         body {
-            top: 70px; /* Maintained as requested */
-            position: relative; /* Ensure top works with relative positioning */
+            top: 70px;
+            position: relative;
             background: linear-gradient(135deg, #2D283E 0%, #4C495D 100%);
         }
 
@@ -16,13 +16,13 @@
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        @keyframes zoomOut {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(0.9); opacity: 0; }
         }
         .animate-fadeIn { animation: fadeIn 1s ease-out; }
         .animate-slideIn { animation: slideIn 0.8s ease-out; }
-        .animate-zoomIn { animation: zoomIn 0.5s ease-out; }
+        .animate-zoomOut { animation: zoomOut 0.4s ease-out; }
 
         :root {
             --primary: #2D283E;
@@ -30,23 +30,7 @@
             --accent: #802BB1;
             --text: #D1D7E0;
             --gray: #564F6F;
-            --gray-200: #E5E7EB;
-            --gray-300: #D1D5DB;
-            --gray-400: #9CA3AF;
-            --black: #000000;
         }
-        .bg-primary { background-color: var(--primary); }
-        .bg-secondary { background-color: var(--secondary); }
-        .bg-accent { background-color: var(--accent); }
-        .text-accent { color: var(--accent); }
-        .text-white { color: var(--text); }
-        .text-gray-200 { color: var(--gray-200); }
-        .text-gray-300 { color: var(--gray-300); }
-        .text-gray-400 { color: var(--gray-400); }
-        .bg-black { background-color: var(--black); }
-        .border-accent { border-color: var(--accent); }
-        .shadow-accent { box-shadow: 0 4px 6px rgba(128, 43, 177, 0.3); }
-        .hover\:shadow-accent:hover { box-shadow: 0 6px 12px rgba(128, 43, 177, 0.5); }
 
         /* Scroll Progress Bar */
         .scroll-progress {
@@ -63,31 +47,6 @@
             background: var(--accent);
             width: 0;
             transition: width 0.1s linear;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            height: 50vh;
-            margin-top: -70px; /* Offset body top */
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(45, 40, 62, 0.8), transparent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--text);
-            text-transform: uppercase;
-            animation: zoomIn 1s ease-out;
         }
 
         /* Serial Card Styling */
@@ -145,16 +104,9 @@
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero bg-primary">
-        <div class="hero-overlay">
-            <h1 class="animate-zoomIn">Movies</h1>
-        </div>
-    </section>
-
     <!-- Serials Grid Section -->
     <section class="py-12 px-6 md:px-12 relative z-20 section" id="serialSection">
-        <h2 class="text-4xl mb-8 text-accent uppercase border-b-2 border-accent inline-block pb-1 animate-fadeIn">Latest Serials</h2>
+        <div class="mb-8 border-b-2 border-accent inline-block pb-1 animate-fadeIn"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="serialGrid">
             <!-- Serial cards will be dynamically added here -->
         </div>
@@ -162,13 +114,12 @@
     </section>
 
     <!-- Modal for Details -->
-    <div id="serialModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-50 hidden justify-center items-center" role="dialog" aria-modal="true">
+    <div id="serialModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-50 hidden justify-center items-center" role="dialog" aria-modal="true" style="top: 70px;">
         <div class="bg-primary p-8 rounded-xl max-w-lg text-center shadow-2xl animate-slideIn">
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-accent transition-colors duration-300" onclick="closeModal()">✕</button>
+            <button class="absolute top-4 right-4 text-gray hover:text-accent transition-colors duration-300" onclick="closeModal()">✕</button>
             <h3 id="modalTitle" class="text-3xl mb-4 text-white font-bold"></h3>
-            <p id="modalOverview" class="mb-6 text-gray-300"></p>
-            <p id="modalReleaseDate" class="mb-2 text-gray-400"></p>
-            <p id="modalGenres" class="mb-6 text-gray-400"></p>
+            <p id="modalOverview" class="mb-6 text-gray"></p>
+            <p id="modalReleaseDate" class="mb-6 text-gray"></p>
             <button class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors duration-300" onclick="closeModal()">Close</button>
         </div>
     </div>
@@ -203,31 +154,15 @@
                     <div class="relative">
                         <img src="${serial.poster}" alt="${serial.title}" class="w-full">
                         <div class="overlay">
-                            <div class="flex space-x-2">
-                                <button class="bg-secondary/70 hover:bg-secondary text-white px-2 py-1 rounded text-sm" onclick="showSerialDetails(${index})">Details</button>
-                                <button class="bg-gray-400 hover:bg-gray-400/80 px-2 py-1 rounded text-sm text-white" onclick="addToWatchlist(${serial.id})">Watchlist</button>
-                            </div>
+                            <button class="bg-secondary/70 hover:bg-secondary text-white px-2 py-1 rounded text-sm" onclick="showSerialDetails(${index})">Details</button>
                         </div>
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-white mb-1 truncate">${serial.title}</h3>
                     </div>
                 `;
-                serialElement.addEventListener('click', (e) => {
-                    if (!e.target.closest('button')) navigateToDesc(serial.id);
-                });
                 container.appendChild(serialElement);
             });
-        }
-
-        // Add to Watchlist (Simulated)
-        function addToWatchlist(serialId) {
-            const serial = dummySerials.find(s => s.id === serialId);
-            const toast = document.createElement('div');
-            toast.classList.add('fixed', 'bottom-4', 'right-4', 'bg-accent', 'text-white', 'px-4', 'py-2', 'rounded-md', 'shadow-lg', 'animate-fadeIn');
-            toast.textContent = `${serial.title} added to your watchlist!`;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
         }
 
         // Show Serial Details in Modal
@@ -236,7 +171,6 @@
             document.getElementById('modalTitle').textContent = serial.title;
             document.getElementById('modalOverview').textContent = serial.overview || 'No overview available.';
             document.getElementById('modalReleaseDate').textContent = `Release Date: ${serial.release_date || 'N/A'}`;
-            document.getElementById('modalGenres').textContent = `Genres: ${['Action', 'Sci-Fi', 'Adventure'][Math.floor(Math.random() * 3)] || 'Unknown'}`;
             document.getElementById('serialModal').style.display = 'flex';
         }
 
@@ -248,11 +182,6 @@
                 modal.style.display = 'none';
                 modal.classList.remove('animate-zoomOut');
             }, 400);
-        }
-
-        // Navigate to Description Page
-        function navigateToDesc(serialId) {
-            window.location.href = `serial-desc.html?id=${serialId}`;
         }
 
         // Scroll Progress Bar

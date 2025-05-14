@@ -6,11 +6,11 @@
     <div class="carousel relative w-full h-screen z-1">
         <!-- Slide 1 -->
         <div class="carousel-slide active absolute top-0 left-0 w-full h-full">
-            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10">
+            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10">
                 <source src="{{ asset('tunder.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Thunderbolts Fallback">
+            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Thunderbolts Fallback">
             <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
                 <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Thunderbolts</h1>
                 <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">A thrilling Marvel adventure where a team of antiheroes must unite to save the world from a deadly threat. Packed with action and humor!</p>
@@ -20,11 +20,11 @@
 
         <!-- Slide 2 -->
         <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
-            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10">
+            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10">
                 <source src="{{ asset('Avatar_ The Way of Water _ Official Trailer.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Avatar Fallback">
+            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Avatar Fallback">
             <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
                 <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Avatar: The Way of Water</h1>
                 <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">Dive back into Pandora with breathtaking visuals and an epic tale of family, survival, and the power of nature.</p>
@@ -34,11 +34,11 @@
 
         <!-- Slide 3 -->
         <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
-            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10">
+            <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10">
                 <source src="{{ asset('Deadpool & Wolverine _ Official Trailer _ In Theaters July 26.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-160px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Deadpool & Wolverine Fallback">
+            <img class="fallback-image w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10 hidden" src="/api/placeholder/1920/1080" alt="Deadpool & Wolverine Fallback">
             <div class="overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col text-center px-8">
                 <h1 class="text-5xl md:text-6xl mb-4 text-white font-bold animate-[zoomIn_1s_ease-out]">Deadpool & Wolverine</h1>
                 <p class="text-xl max-w-3xl mb-8 text-gray-200 animate-[fadeIn_1.5s_ease-out]">The Merc with a Mouth teams up with Wolverine in a hilarious, action-packed romp through the multiverse!</p>
@@ -103,24 +103,20 @@
 
     <!-- JavaScript -->
     <script>
-        // Navbar scroll behavior
-        const navbar = document.querySelector('#navbar');
-        const mainSection = document.querySelector('.navbarStart');
-        if (navbar && mainSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                    navbar.classList.add('bg-transparent');
-                    navbar.classList.remove('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
-                } else {
-                    // Di posisi paling atas: transparan total tanpa blur
-                    navbar.classList.remove('bg-transparent');
-                    navbar.classList.add('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
-                    }
-                });
-            }, { threshold: 0.3 });
-            observer.observe(mainSection);
-        }
+    // Navbar scroll behavior
+    const navbar = document.querySelector('#navbar');
+
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 800) { // Ubah nilai 50 sesuai kebutuhan
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-opacity-80', 'backdrop-blur-md', 'shadow-md');
+            }
+        });
+    }
 
         // Data dummy untuk sementara
         const dummyMovies = {
