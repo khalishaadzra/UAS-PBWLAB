@@ -33,7 +33,6 @@ Fitur Tambahan
 •	✅ Watchlist & review film sebagai fitur interaktif utama.
 
 Nama Anggota:
-Nama Anggota
 •	Khalisha Adzraini Arif (2308107010031)
 •	Faris Zain As-shadiq (2308107010039)
 •	Dwi Hamdan Sukran (2308107010065)
