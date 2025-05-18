@@ -93,7 +93,7 @@
             <!-- Slide 2 -->
             <div class="carousel-slide absolute top-0 left-0 w-full h-full hidden">
                 <video autoplay muted loop playsinline onloadeddata="this.play()" onerror="this.nextElementSibling.style.display='block'; this.style.display='none';" class="w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10">
-                    <source src="{{ asset('Avatar_The_Way_of_Water_Official_Trailer.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('Avatar_ The Way of Water _ Official Trailer.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <img class="fallback-image w-full h-[155%] object-cover absolute top-[-200px] left-0 -z-10 hidden" src="{{ asset('images/fallback_avatar.jpg') }}" alt="Avatar Fallback" onerror="this.onerror=null;this.src='{{ asset('images/placeholder_hero.jpg') }}';">

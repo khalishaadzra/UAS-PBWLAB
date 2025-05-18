@@ -156,30 +156,25 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <!-- Feature Card 1 -->
                 <div class="bg-primary bg-opacity-30 p-6 rounded-lg">
-                    <div class="h-40 bg-primary bg-opacity-50 rounded-lg mb-4"></div>
-                    <h1>
-                        Manage your personal watchlist
-                    </h1>
+                    <img src="{{ asset('avengers.png') }}" alt="Avenger" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h1>Manage your personal watchlist</h1>
                 </div>
                 
                 <!-- Feature Card 2 -->
                 <div class="bg-primary bg-opacity-30 p-6 rounded-lg md:mt-12">
-                    <div class="h-40 bg-primary bg-opacity-50 rounded-lg mb-4"></div>
-                    <h1>
-                        Track your watching progress
-                    </h1>
+                    <img src="{{ asset('Thunderbolt.jpeg') }}" alt="Avenger" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h1>Track your watching progress</h1>
                 </div>
                 
                 <!-- Feature Card 3 -->
                 <div class="bg-primary bg-opacity-30 p-6 rounded-lg">
-                    <div class="h-40 bg-primary bg-opacity-50 rounded-lg mb-4"></div>
-                    <h1>
-                        Rate and review what you've seen
-                    </h1>
+                    <img src="{{ asset('thewitch.png') }}" alt="Avenger" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <h1>Rate and review what you've seen</h1>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer / Category -->
         <footer class="bg-secondary text-white py-20 px-6">
@@ -259,11 +254,11 @@
 
     // Modal functions for poster pop-ups
     function openPosterModal(posterId) {
-        document.getElementById(`${posterId}Modal`).style.display = 'flex';
+        document.getElementById(${posterId}Modal).style.display = 'flex';
     }
 
     function closePosterModal(posterId) {
-        document.getElementById(`${posterId}Modal`).style.display = 'none';
+        document.getElementById(${posterId}Modal).style.display = 'none';
     }
 
     // Optional: Close modal when clicking outside the content
