@@ -34,7 +34,7 @@ Fitur Tambahan
 
 •	✅ Watchlist & review film sebagai fitur interaktif utama.
 
-Nama Anggota:
+Nama Anggota
 
 •	Khalisha Adzraini Arif (2308107010031)
 
